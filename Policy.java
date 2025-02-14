@@ -87,9 +87,10 @@ public class Policy {
       return dmi;
    }
    // a method that calculates the total and returns it
-   public double calculatepolicyPrice(int bmi) {
+   public double calculatePolicyPrice() {
       final double BASE_FEE = 600;
       double additionalFees = 0;
+      double bmi = calculateBMI();
       if (age > 50) {
          additionalFees += 75;
       }
@@ -97,10 +98,11 @@ public class Policy {
          additionalFees += 100;
       }
       if (bmi > 35) {
-         additionalFees += (bmi - 35) * 20;;
+         additionalFees += (bmi - 35) * 20;
       }
-      double total = BASE_FEE + additionalFees;
-      return total;
+      
+      return BASE_FEE + additionalFees;
+      
    }
 
    
