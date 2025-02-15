@@ -3,7 +3,7 @@ public class Project_carls_laguerre {
    public static void main(String[] args) {
       Scanner scrn = new Scanner(System.in);
      
-      
+      // collects policyholder and providers info 
       System.out.print("Please enter the policy Number: ");
       int policyNumber = scrn.nextInt();
       scrn.nextLine();
@@ -35,7 +35,7 @@ public class Project_carls_laguerre {
       scrn.nextLine();
       
       System.out.println("");
-      
+      // stores inputs in one object using the constructor  
       Policy policy = new Policy(policyNumber, providerName, firstName, lastName, age, smokingStat, height, weight);
       
       System.out.println("Policy Number: " + policy.getPolicyNumber());
@@ -47,11 +47,13 @@ public class Project_carls_laguerre {
       System.out.println("Policyholder's Height: " + policy.getHeight());
       System.out.println("Policyholder's Weight: " + policy.getWeight());
       
+      // calls calaculateBMI() from Policy and prints with two decimal places 
       double BMI = policy.calculateBMI();
-      System.out.printf("Policyholder’s BMI: %.2f\n", BMI);
+      System.out.printf("Policyholder's BMI: %.2f\n", BMI);
       
-      double policyPrice = policy.calculatePolicyPrice((double) BMI); 
-      System.out.printf("Policyholder’s price: $%.2f", policy.calculatePolicyPrice());
+      // calls calculatPolicyPrice() and prints with commas and two decimal places
+      double policyPrice = policy.calculatePolicyPrice(); 
+      System.out.printf("Policyholder's Price: $%.2f", policy.calculatePolicyPrice());
       
       
    }

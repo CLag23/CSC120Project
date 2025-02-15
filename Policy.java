@@ -1,5 +1,5 @@
 public class Policy {
-   // private attribute 
+   // private attribute to prevent unauthorized access
    private int policyNumber;
    private String providerName;
    private String firstName;
@@ -10,7 +10,7 @@ public class Policy {
    private double weight;// in pounds
    
    public Policy() {
-      // no-arg constuctor with default values for fields 
+      // no-arg constuctor initializes default values for fields 
       this.policyNumber = 0;
       this.providerName = "";
       this.firstName = "";
@@ -31,7 +31,7 @@ public class Policy {
       this.height = height;
       this.weight = weight;
    }
-   // mutator(setter methods)
+   // mutator(setter methods) allows controlled updates 
    public void setPolicyNumber(int policyNumber) {
       this.policyNumber = policyNumber;
    }
@@ -56,7 +56,7 @@ public class Policy {
    public void setWeight(double weight) {
       this.weight = weight;
    }
-   // accessor(getter methods)
+   // accessor(getter methods) rereive policy details 
    public int getPolicyNumber() {
       return policyNumber;
    }
@@ -83,8 +83,8 @@ public class Policy {
    }
    // a method that calculates the BMI of the policyholder
    public double calculateBMI() {
-      double dmi = (weight * 703)/ (height * height);
-      return dmi;
+      double bmi = (weight * 703)/ (height * height);
+      return bmi;
    }
    // a method that calculates the total and returns it
    public double calculatePolicyPrice() {
